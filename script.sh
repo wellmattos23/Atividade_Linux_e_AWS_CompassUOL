@@ -8,3 +8,4 @@ timestamp=$(date +"%Y-%m-%d %H:%M:%S")
 	else
 		echo "Data/Hora: $timestamp - $service_name - Serviço Httpd offline" >> "/mnt/efs/wellygnton/status-offline.txt"
 	fi
+    
