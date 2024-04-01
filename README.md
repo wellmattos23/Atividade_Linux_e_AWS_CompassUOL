@@ -1,1 +1,1 @@
-<h1 aling="center">ATVIDADE LINUX AWS</h1>
+<h1 align="center">ATVIDADE LINUX AWS</h1>
