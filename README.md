@@ -198,10 +198,8 @@ Documentação AWS: https://docs.aws.amazon.com/pt_br/ <br>
 Guia de Comandos Básicos do Linux: https://medium.com/@raphaelguimares/guia-de-comandos-b%C3%A1sicos-do-linux-dbbf1b80e1f1 <br>
 <br>
 
-<b>
-    👍 Atividade desenvolvida e documentada por Wellygnton Chaves de Matos, proposta pelo Programa de Bolsas Compass UOL AWS e DevSecOps/2024. 👍
+👍 Atividade desenvolvida e documentada por Wellygnton Chaves de Matos, proposta pelo Programa de Bolsas Compass UOL AWS e DevSecOps/2024. 👍
 
-    ⚠️Ao decorrer da documentação algumas informações ficaram explicitas, como endereços IP e o id da instância, o que não é recomendado. Refoço que tais informações não estão mais disponiveis, a intância criada fora apenas para fins de laboratório e logo em seguida encerrada.⚠️
-</b>
+⚠️Ao decorrer da documentação algumas informações ficaram explicitas, como endereços IP e o id da instância, o que não é recomendado. Refoço que tais informações não estão mais disponiveis, a intância criada fora apenas para fins de laboratório e logo em seguida encerrada.⚠️
 
 <img src="Img/Screenshot_19.png" alt="compassUOL">
