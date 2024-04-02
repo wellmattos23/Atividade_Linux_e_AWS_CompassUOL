@@ -164,7 +164,7 @@ As configurações serão feitas diretamente no terminal Linux da instância EC2
 
 <h3>LINUX – Criando um script que valide se o serviço esta online e envie o resultado da validação para o seu diretorio no nfs 📝</h3>
 <ol>
-    <li>Execute o comando <code>nano service_status.sh</code> para criar e abrir o arquivo do script. O script e os arquivos de log deverão está dentro de um diretório com o nome do autor, como sugerido na atividade, então no meu caso o caminho deverá ser <code>mtn/efs/wellygnton</code>;</li>
+    <li>Execute o comando <code>nano service_status.sh</code> para criar e abrir o arquivo do script. O script e os arquivos de log deverão está dentro de um diretório com o nome do autor, como sugerido na atividade, então no meu caso o caminho deverá ser <code>mnt/efs/wellygnton</code>;</li>
     <li>Dentro do arquivo, digite o script desejado;</li>
     <img src="Img/Screenshot_13.png" alt="script.sh">
     <li>Utilizando as condicionais If e else, serão criados os dois arquivos de log em formato .txt de acordo com os resultados da verificação. Um arquivo para status de serviço online e outra para offline.</li>
@@ -196,7 +196,7 @@ Documentação AWS: https://docs.aws.amazon.com/pt_br/ <br>
 Guia de Comandos Básicos do Linux: https://medium.com/@raphaelguimares/guia-de-comandos-b%C3%A1sicos-do-linux-dbbf1b80e1f1 <br>
 <br>
 
-👍 Atividade desenvolvida e documentanda por Wellygnton Chaves de Matos, proposta pelo Programa de Bolsas Compass UOL AWS e DevSecOps/2024. 👍
+👍 Atividade desenvolvida e documentada por Wellygnton Chaves de Matos, proposta pelo Programa de Bolsas Compass UOL AWS e DevSecOps/2024. 👍
 
 ⚠️Ao decorrer da documentação algumas informações ficaram explicitas, como endereços IP e o id da instância, o que não é recomendado. Refoço que tais informações não estão mais disponiveis, a intância criada fora apenas para fins de laboratório e logo em seguida encerrada.⚠️
 
