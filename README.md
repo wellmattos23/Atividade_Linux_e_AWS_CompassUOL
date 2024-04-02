@@ -143,7 +143,7 @@ As configurações serão feitas diretamente no terminal Linux da instância EC2
 
 <ol>
     <li>Entre com o comando <code>sudo su</code> para ganhar privilégios administrativos;</li>
-    <li>Execute o comande de atualização do sistema sudo yum update -y para atualização de pacotes do Linux;</li>
+    <li>Execute o comande de atualização do sistema <code>sudo yum update -y</code> para atualização de pacotes do Linux;</li>
     <li>Com o comando <code>sudo yum install -y amazon-efs-utils</code> faremos a instalação de pacotes de suporte ao NFS, que permite compartilhar diretórios e arquivos entre sistemas operacionais em uma rede.;</li>
     <li>Com o comando <code>mkdir /mnt/efs</code> criaremos o diretório <code>/efs</code> dentro do diretório <code>/mnt</code>, que é o diretório de montagem de sistema de arquivos externos do Linux que servirá como nosso ponto de montagem;;</li>
     <li>Para montarmos o sistema de arquivos iremos utilizar o comando copiado anteriormente do console da AWS em sistemas de arquivos <code>(sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,(DNS do cliente EFS):/ (caminho local))</code>;</li>
@@ -164,7 +164,7 @@ As configurações serão feitas diretamente no terminal Linux da instância EC2
 
 <h3>LINUX – Criando um script que valide se o serviço esta online e envie o resultado da validação para o seu diretorio no nfs 📝</h3>
 <ol>
-    <li>Execute o comando <code>nano service_status.sh</code> para criar e abrir o arquivo do script. O script e os arquivos de log deverão está dentro de um diretório com o nome do autor, como sugerido na atividade, então no meu caso o caminho deverá ser mtn/efs/wellygnton;</li>
+    <li>Execute o comando <code>nano service_status.sh</code> para criar e abrir o arquivo do script. O script e os arquivos de log deverão está dentro de um diretório com o nome do autor, como sugerido na atividade, então no meu caso o caminho deverá ser <code>mtn/efs/wellygnton</code>;</li>
     <li>Dentro do arquivo, digite o script desejado;</li>
     <img src="Img/Screenshot_13.png" alt="script.sh">
     <li>Utilizando as condicionais If e else, serão criados os dois arquivos de log em formato .txt de acordo com os resultados da verificação. Um arquivo para status de serviço online e outra para offline.</li>
@@ -191,13 +191,13 @@ As configurações serão feitas diretamente no terminal Linux da instância EC2
     <img src="Img/Screenshot_18.png" alt="arquivos">
 </ol>
 
-<h3>Referencias 📝</h3>
+<h3>Referências 📝</h3>
 Documentação AWS: https://docs.aws.amazon.com/pt_br/ <br>
 Guia de Comandos Básicos do Linux: https://medium.com/@raphaelguimares/guia-de-comandos-b%C3%A1sicos-do-linux-dbbf1b80e1f1 <br>
 <br>
 
-👍 Atividade densenvolvida e documentanda por Wellygnton Chaves de Matos, propostar pelo Programa de Bolsas Compass UOL AWS e DevSecOps/2024. 👍
+👍 Atividade desenvolvida e documentanda por Wellygnton Chaves de Matos, proposta pelo Programa de Bolsas Compass UOL AWS e DevSecOps/2024. 👍
 
-⚠️Ao decorrer da documentação algumas informações ficaram explicitar, como endereços IP e id da máquina virtual, o que não é recomendado. Refoço que tais informações não estão mais disponiveis, a intância criada fora apenas para fins de laboratório e logo em seguida encerrada.⚠️
+⚠️Ao decorrer da documentação algumas informações ficaram explicitas, como endereços IP e o id da instância, o que não é recomendado. Refoço que tais informações não estão mais disponiveis, a intância criada fora apenas para fins de laboratório e logo em seguida encerrada.⚠️
 
 <img src="Img/Screenshot_19.png" alt="compassUOL">
