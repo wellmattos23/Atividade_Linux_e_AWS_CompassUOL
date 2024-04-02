@@ -1,6 +1,6 @@
-<h1 align="center">ATIVIDADE LINUX AWS</h1>
+<h1 align="center">ATIVIDADE LINUX AWS - DOCUMENTAÇÃO</h1>
 
-<h2>Requisitos AWS</h2>
+<h2>Requisitos AWS ☁️</h2>
 <ul>
     <li>Gerar uma chave pública para acesso ao ambiente;</li>
     <li>Criar 1 instância EC2 com o sistema operacional Amazon Linux 2 (Família t3.small, 16 GB SSD);</li>
@@ -8,7 +8,7 @@
     <li>Liberar as portas de comunicação para acesso público: (22/TCP, 111/TCP e UDP, 2049/TCP/UDP, 80/TCP, 443/TCP).</li>
 </ul>
 
-<h2>Requisitos Linux</h2>
+<h2>Requisitos Linux 🐧</h2>
 <ul>
     <li>Configurar o NFS entregue;</li>
     <li>Criar um diretorio dentro do filesystem do NFS com seu nome;</li>
@@ -19,9 +19,9 @@
     <li>Preparar a execução automatizada do script a cada 5 minutos.</li>
 </ul>
 
-<h2>Desenvolvimento da Atividade</h2>
+<h2>Desenvolvimento da Atividade 📝</h2>
 
-<h3>AWS – Criação da Chave Pública</h3>
+<h3>AWS – Criação da Chave Pública 🔑</h3>
 Existem duas maneiras de se criar uma chave pública na AWS, tanto pelo painel EC2 na lateral esquerda na opção “Pares de Chaves” ou durante o processo de criação de uma instância.
 <ol>
     <li>Acesse os serviços de EC2 da AWS;</li>
@@ -36,7 +36,7 @@ Existem duas maneiras de se criar uma chave pública na AWS, tanto pelo painel E
     <li>Pronto, o par de chaves está criado e será listada em “Pares de Chaves”.</li>
 </ol>
 
-<h3>AWS –  Criar 1 instância EC2 com o sistema operacional Amazon Linux 2 (Família t3.small, 16 GB SSD);</h3>
+<h3>AWS –  Criar 1 instância EC2 com o sistema operacional Amazon Linux 2 (Família t3.small, 16 GB SSD) ☁️</h3>
 <ol>
     <li>Vá até “Instâncias” no painel lateral esquerdo;</li>
     <li>Selecione a opção “Executar Instâncias” no canto superior direito;</li>
@@ -52,9 +52,9 @@ Existem duas maneiras de se criar uma chave pública na AWS, tanto pelo painel E
     <li>Verifique se todas as informações estão corretas e em seguida clique na opção “Executar Instância”.</li>
 </ol>
 
-Antes de criarmos o Elastic IP, deveremos criar um Gateway de Internet para que seja possível a conexão da rede com a internet.
+⚠️ Antes de criarmos o Elastic IP, deveremos criar um Gateway de Internet para que seja possível a conexão da rede com a internet.
 
-<h3>AWS – Criando Gateway de Internet</h3>
+<h3>AWS – Criando Gateway de Internet 🌐</h3>
 <ol>
     <li>Na barra de pesquisa do console da AWS, busque pelo serviço de VPC;</li>
     <li>Clique em “Gateways da Internet” no painel esquerdo;</li>
@@ -64,7 +64,7 @@ Antes de criarmos o Elastic IP, deveremos criar um Gateway de Internet para que 
     <li>Escolha a VPC da instância criada anteriormente e clique em “Associar gateway da internet”.</li>
 </ol>
 
-<h3>AWS - Gerar 1 elastic IP e anexar à instância EC2</h3>
+<h3>AWS - Gerar 1 elastic IP e anexar à instância EC2 🔗</h3>
 <ol>
     <li>No Painel de EC2 clique na opção “IPs Elásticos”;</li>
     <li>Vá até a opção “Alocar endereço IP elástico” no canto superior direito;</li>
@@ -74,7 +74,7 @@ Antes de criarmos o Elastic IP, deveremos criar um Gateway de Internet para que 
     <img src="Img/Screenshot_5.png" alt="elastic IP">
 </ol>
 
-<h3>AWS - Liberar as portas de comunicação para acesso público: (22/TCP, 111/TCP e UDP, 2049/TCP/UDP, 80/TCP, 443/TCP).</h3>
+<h3>AWS - Liberar as portas de comunicação para acesso público: (22/TCP, 111/TCP e UDP, 2049/TCP/UDP, 80/TCP, 443/TCP) 🚪.</h3>
 <ol>
     <li>No Painel EC2 vá até “Security Groups” na lateral esquerda;</li>
     <li>Selecione o security group criado anteriormente;</li>
@@ -85,9 +85,12 @@ Antes de criarmos o Elastic IP, deveremos criar um Gateway de Internet para que 
     <img src="Img/Screenshot_6.png" alt="leberar portas">
 </ol>
 
-Para que o nosso acesso via PuTTY a partir de uma máquina Windows seja possível, precisaremos ainda configurar a tabe de rotas.
+<b>
+    ⚠️ Para que o nosso acesso via PuTTY a partir de uma máquina Windows seja possível, precisaremos ainda configurar a tabe de rotas.
+</b>
 
-<h3>AWS – Configurando a tabela de rotas</h3>
+
+<h3>AWS – Configurando a tabela de rotas 📝</h3>
 <ol>
     <li>Acesse o serviço de VPC, em seguida clique na opção “Tabelas de rotas” no painel esquerdo;</li>
     <li>Selecione a tabela de rotas da VPC da instância criada anteriormente;</li>
@@ -98,7 +101,7 @@ Para que o nosso acesso via PuTTY a partir de uma máquina Windows seja possíve
     <img src="Img/Screenshot_7.png" alt="tabela de rotas">
 </ol>
 
-<h3>AWS - Criando o serviço de Elastic File System (EFS)</h3>
+<h3>AWS - Criando o serviço de Elastic File System (EFS) 🗃️</h3>
 <ol>
     <li>Na barra de pesquisa do console da AWS busque por EFS;</li>
     <li>Dentro do painel vá até “Criar sistema de arquivos”;</li>
@@ -113,10 +116,12 @@ Para que o nosso acesso via PuTTY a partir de uma máquina Windows seja possíve
     <li>Utilizaremos a opção de montagem via DNS, copie o segundo comando e salve em um bloco de notas.</li>
 </ol>
 
-Finalizamos aqui as configurações do nosso ambiente AWS, em seguida iremos configurar nossa máquina Linux.
-Faremos o acesso via PuTTY, para isso o mesma precisará está devidamente instalado na sua máquina Windows. O PuTTY é um cliente SSH gratuito para Windows.
+<b>
+    ✅Finalizamos aqui as configurações do nosso ambiente AWS, em seguida iremos configurar nossa máquina Linux.
+    Faremos o acesso via PuTTY, para isso o mesma precisará está devidamente instalado na sua máquina Windows. O PuTTY é um cliente SSH gratuito para Windows.
+</b> 
 
-<h3>PuTTY – Acessando a instância via PuTTY</h3>
+<h3>PuTTY – Acessando a instância via PuTTY 💻</h3>
 <ol>
     <li>Vá até sua instância EC2, selecione a mesma e clique em “conectar”;</li>
     <li>Abra a aba “Cliente SSH” e copie o DNS público da instância;</li>
@@ -133,7 +138,7 @@ Faremos o acesso via PuTTY, para isso o mesma precisará está devidamente insta
     <img src="Img/Screenshot_10.png" alt="terminal aws linux">
 </ol>
 
-<h3>LINUX – Configurando o NFS entregue</h3>
+<h3>LINUX – Configurando o NFS entregue 📂</h3>
 As configurações serão feitas diretamente no terminal Linux da instância EC2 que criamos.
 
 <ol>
@@ -146,7 +151,7 @@ As configurações serão feitas diretamente no terminal Linux da instância EC2
     <img src="Img/Screenshot_11.png" alt="ponto de montagem">
 </ol>
 
-<h3>LINUX – Configurando o Apache</h3>
+<h3>LINUX – Configurando o Apache 🛠️</h3>
 <ol>
     <li>Execute o comande de atualização do sistema <code>sudo yum update -y</code> para atualização de pacotes do Linux;</li>
     <li>Use o comando <code>sudo yum install httpd -y</code> para instalar o Apache;</li>
@@ -157,9 +162,9 @@ As configurações serão feitas diretamente no terminal Linux da instância EC2
     <img src="Img/Screenshot_12.png" alt="status apache">
 </ol>
 
-<h3>LINUX – Criando um script que valide se o serviço esta online e envie o resultado da validação para o seu diretorio no nfs</h3>
+<h3>LINUX – Criando um script que valide se o serviço esta online e envie o resultado da validação para o seu diretorio no nfs 📝</h3>
 <ol>
-    <li>Execute o comando <code>nano service_status.sh</code> para criar e abrir o arquivo do script. O script e os arquivos de log deverão está dentro de um diretório com o nome do autor, como sugerido na atividade, então no meu caso o caminho deverá ser mtn/efs/Wellygnton;</li>
+    <li>Execute o comando <code>nano service_status.sh</code> para criar e abrir o arquivo do script. O script e os arquivos de log deverão está dentro de um diretório com o nome do autor, como sugerido na atividade, então no meu caso o caminho deverá ser mtn/efs/wellygnton;</li>
     <li>Dentro do arquivo, digite o script desejado;</li>
     <img src="Img/Screenshot_13.png" alt="script.sh">
     <li>Utilizando as condicionais If e else, serão criados os dois arquivos de log em formato .txt de acordo com os resultados da verificação. Um arquivo para status de serviço online e outra para offline.</li>
@@ -169,3 +174,27 @@ As configurações serão feitas diretamente no terminal Linux da instância EC2
     <li>Podemos visualizar o arquivo com o comando <code>cat status-online.txt</code>;</li>
     <img src="Img/Screenshot_14.png" alt="arquivo de log">
 </ol>
+
+<h3>LINUX – Automatização do script para rodar a cada 5 minutos ⏲️</h3>
+<ol>
+    <li>Digite o comando <code>EDITOR=nano crontab -e</code>, para que o nano abra o arquivo crontab;</li>
+    <li>Dentro do arquivo digite a linha <code>*/5 * * * * /mnt/efs/wellygnton/service_status.sh</code>;</li>
+    <li>Salve o arquivo e feche o editor.</li>
+    <li>É possível verificar se a automatização está funcionando abrindo os arquivos .txt que serão criados e guardar as informações de verificação do serviço online e offline.</li>
+    <li>Ao abrirmos o arquivos veremos as informações de status de serviço online;</li>
+    <img src="Img/Screenshot_15.png" alt="status-online">
+    <li>Para fazermos verificação do serviço offline será necessário interromper o Apache usando o comando <code>sudo systemctl stop httpd</code>; </li>
+    <img src="Img/Screenshot_16.png" alt="interromper Apache">
+    <li>Em seguida podemos verificar que o arquivo .txt de serviço offline será criado;</li>
+    <img src="Img/Screenshot_17.png" alt="status-offline">
+    <li>Os arquivos estarão disponiveis em nosso diretório de destino.</li>
+    <img src="Img/Screenshot_18.png" alt="arquivos">
+</ol>
+
+<h3>Referencias 📝</h3>
+Documentação AWS: https://docs.aws.amazon.com/pt_br/ <br>
+Guia de Comandos Básicos do Linux: https://medium.com/@raphaelguimares/guia-de-comandos-b%C3%A1sicos-do-linux-dbbf1b80e1f1 <br>
+
+👍 Atividade densenvolvida e documentanda por Wellygnton Chaves de Matos, propostar pelo Programa de Bolsas Compass UOL AWS e DevSecOps/2024. 👍
+
+⚠️Ao decorrer da documentação algumas informações ficaram explicitar, como endereços IP e id da máquina virtual, o que não é recomendado. Refoço que tais informações não estão mais disponiveis, a intância criada fora apenas para fins de laboaratório e logo em seguida encerrada.⚠️
